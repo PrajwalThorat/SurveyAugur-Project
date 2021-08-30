@@ -1,0 +1,52 @@
+stages:
+  - build
+  - lint
+  # - test
+  - release
+
+variables:
+  DEPLOY_BRANCH: $CI_COMMIT_REF_NAME
+
+
+# Java Build
+java-build:
+  image: maven:3.6.0-jdk-11
+  stage: build
+  script:
+    - mvn clean package -DskipTests -B
+
+# Java Lint
+java-lint:
+  image: maven:3.6.0-jdk-11
+  stage: lint
+  script:
+    - mvn pmd:check -B
+  dependencies:
+    - java-build
+
+# java-tests:
+#   image: maven:3.6.0-jdk-11
+#   stage: test
+#   script:
+#     - mvn test jacoco:report -B
+#     - cat target/site/jacoco/index.html
+#   dependencies:
+#     - java-build
+
+release_deploy:
+  image: ubuntu:latest
+  stage: release
+  before_script:
+    - mkdir -p ~/.ssh
+    - echo -e "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - 'echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'   
+  script:
+    - ls -ltr
+    - /bin/sh .gitlab-deploy.sh   
+  environment:
+    name: release
+  when: on_success
+  only:
+    - release_v2.0.0
+

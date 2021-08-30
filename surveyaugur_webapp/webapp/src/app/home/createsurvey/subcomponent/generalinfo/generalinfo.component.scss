@@ -1,0 +1,25 @@
+.example-full-width{
+    width:60%;
+}
+.example-button-row{
+    width: 60%;
+    display: flex;
+  justify-content: flex-end;
+}
+.example-box.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-chip .cdk-drop-list-dragging {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+.generalinfo{
+  margin-left:25%;
+}
+h1{
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: bolder;
+  margin-left: 70px;
+  margin-bottom: 40px;
+}

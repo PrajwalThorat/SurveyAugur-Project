@@ -1,0 +1,61 @@
+
+<h1>Additional Information</h1>
+
+<div class="addinfo">
+  <form #addinfo="ngForm">
+    <div>
+      <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Target Audience</mat-label>
+          <input  name="targetAudience" matInput placeholder="Please enter the audience for whom this survey is designed" ngModel required>
+        </mat-form-field>
+  </div>
+  </form>
+  
+  <div class="example-full-width">
+      <mat-expansion-panel  hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+             UI Setting
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          
+          <div>
+              <mat-form-field appearance="outline">
+                  <mat-label>Font Size</mat-label>
+                  <mat-select #fontsize (selectionChange)="font1($event)">
+                      <mat-option *ngFor="let size of  sizes" [value]="size.value">
+                        {{size.viewValue}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+          </div>
+           <div>
+              <mat-form-field appearance="outline">
+                  <mat-label>Font Style</mat-label>
+                  <mat-select #fontstyle (selectionChange)="font2($event)">
+                    <mat-option value="italic">Italic</mat-option>
+                    <mat-option value="bold">Bold</mat-option>
+                    <mat-option value="Normal">normal</mat-option>
+              </mat-select>
+                </mat-form-field>
+           </div>
+  
+           <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Font Family</mat-label>
+              <mat-select #fontfamily (selectionChange)="font3($event)">
+                  <mat-option *ngFor="let style of  styles" [value]="style.value">
+                    {{style.viewValue}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+           </div>
+           
+  
+  
+  
+        </mat-expansion-panel>
+        <div  class="example-button-row" >
+          <button mat-raised-button color="primary" matStepperNext (click)="add(addinfo)" [disabled]="!addinfo.valid">Save and Next</button>
+        </div>
+        
+  </div>
+</div>

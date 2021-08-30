@@ -1,0 +1,30 @@
+<div class="add">
+  <div class="addquestion" >
+    <div  *ngFor="let questionGrp of addQues"  style="margin-bottom: 20px;">
+    <mat-expansion-panel  hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+             {{questionGrp.questionGroup.name}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+        <div class="texts" *ngFor="let l of questionGrp.question; let i=index">
+          <div class="show">{{(readMore[i]) ? l.questionBody : l.questionBody | slice:0:50}}
+            <span *ngIf="!readMore[i]">...</span>
+            <a href="javascript:;" *ngIf="!readMore[i]" (click)="readMore[i]=true">[Read More]</a>
+          </div>
+          <div>
+            <mat-checkbox  color="primary" (click)="get(l)" class="example-margin"></mat-checkbox>
+            </div>
+        </div>
+    </mat-expansion-panel>
+    </div>
+  </div>
+  <div class="addquestion">
+
+ <div *ngFor="let q of questionList">
+       <p>{{q.questionBody}}</p>
+   </div>
+
+ </div>
+</div>

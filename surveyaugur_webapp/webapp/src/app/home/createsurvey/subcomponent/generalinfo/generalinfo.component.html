@@ -1,0 +1,49 @@
+<h1>General Info</h1>
+<div class="generalinfo">
+  <form #ginfo="ngForm">
+    <div>
+      <mat-form-field  class="example-full-width" appearance="outline">
+          <mat-label>Survey Title</mat-label>
+          <input matInput placeholder="Enter the Survey Title" name="survey_title" ngModel required>
+        </mat-form-field>
+  </div>
+  <div >
+        <mat-form-field class="example-chip-list example-full-width " appearance="outline">
+          <mat-label>Favorite Tags</mat-label>
+          <mat-chip-list #chipList aria-label="Tag selection">
+            <mat-chip
+              *ngFor="let tag of tags"
+              [selectable]="selectable"
+              [removable]="removable"
+              (removed)="remove(tag)">
+              {{tag}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input
+              placeholder="New Tag..."
+              [matChipInputFor]="chipList"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
+
+        </mat-form-field>
+  </div>
+  <div>
+      <mat-form-field  class="example-full-width" appearance="outline">
+          <mat-label>Description</mat-label>
+          <input matInput placeholder="Enter your Survey Moto" name="description" ngModel maxlength="100">
+          <mat-hint>Upto 100 characters only allowed</mat-hint>
+        </mat-form-field>
+  </div>
+  <div>
+      <mat-form-field  class="example-full-width" appearance="outline">
+          <mat-label>Active Time</mat-label>
+          <input matInput placeholder="Enter the time in hours" name="activeTime" ngModel required type="number">
+        </mat-form-field>
+  </div>
+  <div class="example-button-row">
+      <button mat-raised-button color="primary" matStepperNext [disabled]="!ginfo.valid" (click)="submit(ginfo)">Save and Next</button>
+  </div>
+
+  </form>
+</div>

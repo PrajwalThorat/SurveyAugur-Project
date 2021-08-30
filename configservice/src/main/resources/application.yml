@@ -1,0 +1,22 @@
+spring:
+  banner:
+    location: classpath:banner.txt
+  application:
+    name: configservice
+  cloud:
+    compatibility-verifier:
+      enabled: false
+    config:
+      server:
+        git:
+          uri: https://gitlab.stackroute.in/stackroute-pgp-wave6/surveyaugur/-/tree/release_v1.0.0/surveyaugur_configurations
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true

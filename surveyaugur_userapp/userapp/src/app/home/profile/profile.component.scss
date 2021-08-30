@@ -1,0 +1,129 @@
+#main {
+  width: 100%;
+  display: flex;
+}
+
+#left {
+  width: 60%;
+  margin-top:50px;
+}
+
+#right {
+  float: right;
+  width: 40%;
+  margin-top: 50px;
+}
+//heading
+.profile-header {
+  font-size: larger;
+  width: 200px;
+  text-align: center;
+  margin-top: 3%;
+  color:blue;
+}
+
+// Profile detail on left side
+.profile-detail {
+  height: 400px;
+  width:100%;
+  padding: 0;
+  display: flex;
+}
+
+.user-important-detail {
+  height: 300px;
+  width:30%;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+//photo
+  .user-photo {
+    margin-top: 10px;
+    img {
+      max-width: 180px;
+    }
+
+    input[type=file] {
+      padding: 10px;
+      background: #2d2d2d;
+    }
+  }
+//photo below name
+  .user-name {
+    margin-top: 10px;
+    color:blue;
+  }
+//edit button
+  .btn-edit{
+    margin-top: 10px;
+    width: 50px;
+    align-self: flex-end;
+    margin-right: 10px;
+    background:orange;
+    color:white;
+  }
+  .profile-image-selector{
+    width:100px;
+  }
+}
+//user details,container and save button
+.user-details{
+  align-self: center;
+  color:blue;
+}
+
+.form-container {
+  width:70%;
+  display: flex;
+  flex-direction: column;
+
+  .data-form {
+    padding: 20px;
+
+    .form-field {
+      display: flex;
+      margin-bottom: 10px;
+      ;
+
+      label {
+        width: 200px;
+      }
+    }
+  }
+
+  .btn-save {
+    margin-top: 10px;
+    width: 50px;
+    align-self: flex-end;
+    background:orange;
+        color:white;
+  }
+}
+
+
+
+
+//selections for user
+.user-selections {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0px;
+  align-items: flex-end;
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+.card {
+  width: 60%;
+  height: 50px;
+  margin: 2%;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);
+  margin-bottom: 7%;
+  border-left: 5px orange solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

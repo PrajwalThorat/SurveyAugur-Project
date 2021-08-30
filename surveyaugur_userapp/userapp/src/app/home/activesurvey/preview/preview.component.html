@@ -1,0 +1,47 @@
+<section>
+    <mat-card>
+       <div>
+         <h1> Survey Title: {{active.surveyTitle}}</h1>
+         <span class="head"><app-count-down> </app-count-down></span>
+       </div>
+       <p>Description: {{active.description}}</p>
+      <p>Tags: {{tagComp}}</p>
+      <p>Target Audience: {{active.targetAudience}}</p>
+     </mat-card>
+   
+     
+   <mat-card class="scrollable-content" style="margin-top: 20px;">
+     <mat-card-title>
+       Question
+     </mat-card-title>
+     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+     <div *cdkVirtualFor="let q of questionList; let i=index" class="example-item">
+       <div *ngIf="i==0" style="margin-top: 5%;"><h1>We Value Your FeedBack</h1></div>
+       <p style="margin-left: 10px;" *ngIf="i!=0">{{i}}&nbsp;&nbsp;{{q.questionBody}}</p>
+   <div  style="margin:20px;" *ngIf="i!=0">
+     <div *ngIf="q.questionType=='MULTIPLE_SELECT'" >
+       <mat-radio-group aria-label="Select an option" *ngFor="let op of q.options">
+         <mat-radio-button value="op">{{op}} &nbsp;</mat-radio-button>
+       </mat-radio-group>
+      </div>
+     <div *ngIf="q.questionType=='SINGLE_SELECT'">
+       <mat-radio-group aria-label="Select an option" *ngFor="let op of q.options">
+         <mat-radio-button value="op">{{op}} &nbsp;</mat-radio-button>
+       </mat-radio-group>
+     </div>
+     <div *ngIf="q.questionType=='SUBJECTIVE'">
+         <input type="text" placeholder="Enter your valuable answer" style="padding: 10px;margin-top: 3px;margin-bottom: 3px;" >
+       
+     </div>
+   </div>
+     </div>
+       </cdk-virtual-scroll-viewport>
+   </mat-card>
+    
+      <div  class="example-button-row" >
+        <button mat-raised-button color="primary"  [routerLink]="['/home/activesurvey']" >Submit</button>
+      </div>
+   
+   
+     </section>
+   

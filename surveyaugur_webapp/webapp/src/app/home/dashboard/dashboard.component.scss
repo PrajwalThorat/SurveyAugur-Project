@@ -1,0 +1,74 @@
+body {
+  overflow: auto;
+}
+
+.create-survey{
+    background-color: green;
+    color:white;
+    height: 40px;
+    width:150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    margin-top:10px;
+}
+
+.flex{
+ display:flex;
+ justify-content:center;
+ margin-top:10px;
+ padding:10px;
+
+
+}
+
+.example-card {
+  max-width: 240px;
+  border: 1px solid green-color !important;
+  margin: 1px;
+
+
+}
+.example-card1 {
+  max-width: 220px;
+  margin: 1px;
+
+}
+.example-card2 {
+  max-width: 230px;
+  margin: 1px;
+
+}
+
+
+
+.box{
+    display:flex;
+    justify-content: left;
+    padding:35px;
+    padding-left:10px;
+    margin-left:10px;
+}
+
+
+
+.chart-container{
+display:flex;
+font-size:50px;
+font-color:green;
+margin-top:1px;}
+
+lables{
+color:white;}
+
+.cls{
+color:lightgreen;
+padding:10px;}
+
+.siz{
+display:flex;
+justify-content:center;
+padding-top:35px;
+padding-bottom: 35px;
+margin: auto;}

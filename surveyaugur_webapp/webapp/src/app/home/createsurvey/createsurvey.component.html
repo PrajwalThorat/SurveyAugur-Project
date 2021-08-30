@@ -1,0 +1,24 @@
+<mat-stepper labelPosition="bottom" linear #stepper class="mystep">
+<mat-step>
+    <form>
+<ng-template matStepLabel>General Info</ng-template>
+<app-generalinfo></app-generalinfo>
+</form>
+</mat-step>
+<mat-step>
+    <ng-template matStepLabel>Add Question</ng-template>
+    <h1>Add Questions</h1>
+   <app-questionstepper></app-questionstepper>
+
+</mat-step>
+<mat-step>
+    <ng-template matStepLabel>Additional Info</ng-template>
+    <app-addinfo></app-addinfo>
+</mat-step>
+
+<mat-step>
+    <ng-template matStepLabel>Preview</ng-template>
+    <app-preview></app-preview>
+</mat-step>
+
+</mat-stepper>

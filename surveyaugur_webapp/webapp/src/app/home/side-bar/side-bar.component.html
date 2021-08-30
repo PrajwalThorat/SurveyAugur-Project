@@ -1,0 +1,16 @@
+<mat-sidenav-container class="full-height" autosize="true">
+    <mat-sidenav mode="side" opened (click)="toggleSidebar()">
+
+        <div mat-menu-item *ngFor="let i of sideMenu" class="with-icon padded"  (click)="routing(i.route)"
+
+               (click)="$event.stopPropagation()">
+            <mat-icon [matTooltip]="i.toolTip">{{ i.icon }}</mat-icon>&nbsp;
+            <span [hidden]="collapse">{{ i.name }}</span>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="padded mystep">
+         <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

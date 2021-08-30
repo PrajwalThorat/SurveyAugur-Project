@@ -1,0 +1,15 @@
+spring:
+  banner:
+    location: classpath:banner.txt
+  application:
+    name: surveyaugur_userapp
+
+server:
+  port: 8092
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true

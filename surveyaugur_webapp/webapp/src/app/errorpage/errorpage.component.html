@@ -1,0 +1,98 @@
+<!-- Header -->
+<mat-toolbar class ="app-toolbar">
+  <span id="navbar-brand">
+    <a  href="#">
+      <img src="assets/images/Logo.png" width="90px" height="80px" alt="">
+    </a>
+  </span>
+</mat-toolbar>
+
+<!-- Separation Border -->
+<div style="width: 100%; height: 1.8px; background-color: #ea7540; position: sticky;z-index: 1000;"></div>
+
+<!-- Error Component -->
+<div style="position: relative; z-index: 0; height: 630px; width: 90vw; margin-left: 4.5vw; margin-right: 5vw; background-color: #ea7540; display: flex; justify-content: center; align-items: baseline;" id="cont1" *ngIf = !errorCode>
+  <div class="bubble bubble-bottom-left" >
+    <p class="description" style="line-height: 28px;">{{errorDescription}}</p>
+  </div>
+  <img src="assets/images/sad-emoji.png" alt="" height="420px" style="position: absolute; margin-top: 190px;">
+</div>
+
+<div style="position: relative; z-index: 0; height: 630px; width: 90vw; margin-left: 4.5vw; margin-right: 5vw; background-color: #ea7540; display: flex; justify-content: center; align-items: baseline;" id="cont"  *ngIf =errorCode>
+  <div class="bubble bubble-bottom-left" >
+    <p class="error">{{errorCode}}</p>
+    <p class="description">{{errorDescription}}</p>
+  </div>
+
+  <img src="assets/images/sad-emoji.png" alt="" height="420px" style="position: absolute; margin-top: 190px;">
+
+</div>
+
+
+<!-- Footer -->
+
+<!-- Footer Follow Us -->
+<footer id="font-color">
+  <mat-toolbar id="follow-us" style="border: 1px solid black;" *ngIf="screenWidth > 560">
+    <span style="color: rgba(255, 255, 255, 0.74)">Get connected with us on social networks:</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button>
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/facebook-logo.svg" width="32" height="32" alt="">
+      </a>
+    </button>
+    <button mat-icon-button>
+      <a href="#">
+        <img src="assets/images/Instagram-Logo.svg" width="32" height="32" alt="">
+      </a>
+    </button>
+    <button mat-icon-button>
+      <a href="#">
+        <img src="assets/images/Twitter-Logo.svg" width="32" height="32" alt="">
+      </a>
+    </button>
+  </mat-toolbar>
+
+
+  <mat-toolbar class="fontchange1" id="footer" style="" *ngIf="screenWidth < 561">
+    <div style="color: rgba(255, 255, 255, 0.74)">Get connected with us on social networks:</div>
+    <div>
+    <button mat-icon-button>
+      <a href="#">
+        <img src="assets/images/facebook-logo.svg" width="32" height="32" alt="">
+      </a>
+    </button>
+    <button mat-icon-button>
+      <a href="#">
+        <img src="assets/images/Instagram-Logo.svg" width="32" height="32" alt="">
+      </a>
+    </button>
+    <button mat-icon-button >
+      <a href="#">
+        <img src="assets/images/Twitter-Logo.svg" width="32" height="32" alt="">
+      </a>
+    </button>
+  </div>
+</mat-toolbar>
+
+<!-- Footer About Us -->
+<mat-toolbar id="aboutfooter" fxLayout="column" fxLayout.lt-sm="column" fxLayout.sm="row" fxLayout.md="row" fxLayout.xl="row"  fxLayout.gt-lg="row" fxLayout.gt-md="row"  class="container" fxLayoutAlign="space-between" class="styl">
+  <div class="aboutcontainer fontchange">
+    <p style="font-weight: 700; font-family: Arial, Helvetica, sans-serif;">SurveyAugur:</p>
+    <p style=" word-wrap: normal; white-space: break-spaces;" >Voice your opinion on global brands, entertainment, advertising and more. Your opinion is always valued. Let your voice reach the world and make a difference.</p>
+  </div>
+  <div class="aboutcontainer fontchange" id="contact-number">
+    <p style="font-weight: 700; font-family: Arial, Helvetica, sans-serif;">Contact Us:</p>
+    <p><mat-icon style="vertical-align: middle;">home</mat-icon>&nbsp;&nbsp;117,Bengaluru,Karnataka 560095</p>
+    <p><mat-icon style="vertical-align: middle;">phone</mat-icon>&nbsp;&nbsp;11111111</p>
+    <p><mat-icon style="vertical-align: middle;">local_printshop</mat-icon>&nbsp;&nbsp;22222222</p>
+  </div>
+</mat-toolbar>
+
+<!-- Footer Copyright -->
+<mat-toolbar id="footer-Copyright" class="fontchange">
+  <p style="color: rgba(255, 255, 255, 0.74)">© 2021 Copyright:
+    <a href="https://stackroutelearning.com/" style="color: #7084f8;">stackroutelearning.com</a></p>
+</mat-toolbar>
+
+</footer>

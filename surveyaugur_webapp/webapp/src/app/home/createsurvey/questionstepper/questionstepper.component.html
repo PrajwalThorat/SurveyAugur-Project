@@ -1,0 +1,14 @@
+<mat-tab-group mat-align-tabs="start" class="example-stretched-tabs mat-elevation-z4">
+    <mat-tab label="Select Question" class="firsttab" >
+        <app-addquestion></app-addquestion>
+        <div  class="example-button-row" >
+            <button mat-raised-button color="primary" (click)='nextStep("Question List")' [disabled]="!enable">Add Question</button>
+          </div>
+    </mat-tab>
+    <mat-tab label="Question List" >
+        <app-questionlist></app-questionlist>
+        
+            </mat-tab>
+    
+  </mat-tab-group>
+  

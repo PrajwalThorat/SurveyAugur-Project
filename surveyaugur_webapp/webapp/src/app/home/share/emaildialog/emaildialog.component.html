@@ -1,0 +1,37 @@
+<form class="ex" #basicForm="ngForm" (ngSubmit)="sendMailIds(basicForm.value)">
+  <div>
+    <mat-form-field class="example-full-width" appearance="fill" >
+      <mat-label>Receipient Mail</mat-label>
+      <mat-chip-list #chipList aria-label="Fruit selection">
+        <mat-chip *ngFor="let mail of mailId" [selectable]="selectable"
+                  [removable]="removable" (removed)="remove(mail)">
+          {{mail}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="Enter valid mail id.."
+               [matChipInputFor]="chipList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="add($event)">
+      </mat-chip-list>
+    </mat-form-field>
+  </div>
+    <div>
+      <mat-form-field class="example-full-width" appearance="fill" >
+        <mat-label>Survey Url</mat-label>
+        <input matInput [(ngModel)]="surveyUrl" readonly>
+      </mat-form-field>
+    </div>
+   <div>
+     <mat-form-field class="example-full-width" appearance="fill">
+       <mat-label>Message</mat-label>
+       <textarea matInput class="ex1" ngModel name="message"></textarea>
+     </mat-form-field>
+     </div>
+
+
+       <div class="example-button-row">
+         <button mat-raised-button color="primary" type="submit"  mat-dialog-close>Send</button>
+       </div>
+
+</form>

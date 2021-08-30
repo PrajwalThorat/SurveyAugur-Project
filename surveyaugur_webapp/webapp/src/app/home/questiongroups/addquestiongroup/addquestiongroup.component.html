@@ -1,0 +1,37 @@
+<h2 mat-dialog-title style="background-color: #f7703f; text-align:center">ADD QuestionGroup</h2>
+<hr>
+<mat-dialog-content class="mat-typography" style="height: 500px;width: 500px">
+  <form #basicForm="ngForm" (ngSubmit)="getData(basicForm.value)" class="example-form" >
+
+
+    <table class="example-full-width" cellspacing="0" style="margin-top: 30px"><tr>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>QuestionGroup Name:</mat-label>
+        <input matInput type="text" [(ngModel)]="quesGrp.name" name="questionGroupName" #name="ngModel" id="name" required>
+      </mat-form-field></td></tr>
+      <tr>
+      <td><mat-form-field class="example-chip-list" appearance="fill">
+        <mat-label>Question Tags</mat-label>
+        <mat-chip-list #chipList  aria-label="Tag selection">
+          <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
+                    [removable]="removable" (removed)="remove(tag)">
+            {{tag}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input type="text"  ngModel name="questionGrouptags" placeholder="New Tag"
+                 [matChipInputFor]="chipList"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+      </mat-form-field></td>
+    </tr></table>
+    <mat-dialog-actions align="end">
+      <button mat-button color="warn" mat-dialog-close>Cancel</button>
+      <button type="submit" mat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+    </mat-dialog-actions>
+
+  </form>
+
+</mat-dialog-content>
+

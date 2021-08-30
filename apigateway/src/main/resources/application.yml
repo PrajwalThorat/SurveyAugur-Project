@@ -1,0 +1,42 @@
+server:
+  port: 8080
+
+spring :
+  banner :
+    location : classpath:banner.txt
+  application:
+    name: apigateway
+  cloud:
+    gateway:
+      routes:
+        - id: survey_engine
+          uri: http://localhost:8087
+          predicates:
+            - Path=/surveyengine/**
+        - id: survey_authoring
+          uri: http://localhost:8086
+          predicates:
+            - Path=/surveyauthor/**
+        - id: surveyaugur_webapp
+          uri: http://localhost:8091
+          predicates:
+            - Path=/app/**
+          filters:
+            - RewritePath=/app/(?<segment>.*), /$\{segment}
+        - id: surveyaugur_userapp
+          uri: http://localhost:8092
+          predicates:
+            - Path=/client/**
+          filters:
+            - RewritePath=/client/(?<segment>.*), /$\{segment}
+        - id: user_microservice
+          uri: http://localhost:8085
+          predicates:
+            - Path=/userservice/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true

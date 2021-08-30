@@ -1,0 +1,13 @@
+.ex{
+margin-left:10%;
+}
+.example-button-row{
+    display: flex;
+  justify-content: flex-end;
+}
+.example-full-width{
+
+width:80%;
+
+
+}

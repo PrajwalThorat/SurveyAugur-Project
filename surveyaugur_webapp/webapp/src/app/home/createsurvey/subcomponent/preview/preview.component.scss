@@ -1,0 +1,32 @@
+.heading{
+  display:block;
+  flex-direction: column;
+}
+.head{
+    position: absolute;
+    right:0;
+    
+}
+.example-viewport {
+  height: 250px;
+  width: 100%;
+ // margin-top: 20px;
+}
+.mat-card-title{
+  margin-top: 8px;
+}
+.example-item {
+  height: 100px;
+}
+.example-button-row{
+  width: 98%;
+  margin-top: 8%;
+ margin-bottom: 3%;
+  display: flex;
+justify-content: flex-end;
+}
+h1{
+  font-size: x-large;
+  font-weight: bolder;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

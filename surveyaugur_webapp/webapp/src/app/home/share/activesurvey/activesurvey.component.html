@@ -1,0 +1,32 @@
+
+<p class="sub-heading" style="margin-top:30px">Surveys</p>
+<hr style="width:100%">
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin-left:25%" *ngIf="dataSource.filteredData.length > 0; else elseBlock">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef class="tableHeader">SNo. </th>
+        <td mat-cell *matCellDef="let element= index"> {{element+1}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="tableHeader"> Survey Title </th>
+        <!-- <td mat-cell *matCellDef="let element"> {{element.surveyTitle}}<br>{{element.surveyUrl}} </td> -->
+        <td mat-cell *matCellDef="let element" (click)="openDialog(element.surveyUrl,element.surveyId)"> {{element.surveyTitle}} </td>
+      </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+<ng-template #elseBlock>
+  <h3>Sorry!! There are no Active Surveys to share.......</h3>
+</ng-template>
+
+

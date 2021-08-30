@@ -1,0 +1,81 @@
+<div>
+    <div class="profile-header">User Profile</div>
+</div>
+<div id="main">
+    <div id="left">
+        <mat-card class="profile-detail">
+            <div class="user-important-detail">
+                <div class="user-photo">
+
+
+                    <img id="blah" [src]="profileImagePath" alt="your image" />
+
+                </div>
+                <div class="user-name">
+                    user_name
+                </div>
+
+                <button  mat-button class="btn-edit" (click)="onEdit()">Edit</button>
+                <input type='file' (change)="readURL($event)" [disabled]="!isEditing" *ngIf="isEditing"
+                    class="profile-image-selector" />
+            </div>
+
+            <mat-card class="form-container">
+                <div class="user-details"> User Details</div>
+                <form class="data-form" [formGroup]="profileForm">
+                    <div class="form-field">
+                        <label>UserName</label>
+                        <input type="text" id="UserName" name="UserName" formControlName="username" placeholder="myname"
+                            [attr.disabled]="true">
+                    </div>
+
+                    <div class="form-field">
+                        <label>Email</label>
+                        <input type="text" id="Email" name="Email" formControlName="email" placeholder="me@gmail.com"
+                            [attr.disabled]="true">
+                    </div>
+
+                    <div class="form-field">
+                        <label>Role</label>
+                        <input type="text" id="Role" name="Role" formControlName="role" placeholder="developer"
+                            [attr.disabled]="true">
+                    </div>
+
+                    <div class="form-field">
+                        <label>Access Level</label>
+                        <input type="text" id="Access Level" name="Access Level" formControlName="accessLevel"
+                            placeholder="premium" [attr.disabled]="true">
+                    </div>
+
+                    <div class="form-field">
+                        <label>Organization</label>
+                        <input type="text" id="form-field" name="form-field" formControlName="organization"
+                            placeholder="my">
+
+                    </div>
+                </form>
+
+                <button mat-button  class="btn-save" (click)="onSave()">Save</button>
+            </mat-card>
+        </mat-card>
+
+    </div>
+    <div id="right">
+        <div class="user-selections" id="test">
+            <div class="card">
+                CURRENT_PLAN
+            </div>
+            <div class="card">
+                FAQ and Help
+            </div>
+            <div class="card">
+                LINKED_ACCOUNT
+            </div>
+            <div class="card">
+                ABOUT_US
+            </div>
+
+        </div>
+
+    </div>
+</div>

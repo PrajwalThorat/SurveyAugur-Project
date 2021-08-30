@@ -1,0 +1,57 @@
+
+.sub-heading
+{
+font-size: 18px;
+font-weight: bold;
+font-family: 'Roboto';
+}
+
+
+.Active Surveys .div .button{
+ background-color:blue;
+}
+table {
+  width: 38%;
+}
+.tableHeader{
+  background-color:dodgerblue;
+  font-size: medium;
+  justify-content: center;
+
+}
+.mat-column-position
+{
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 0% !important;
+  width: 20% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-name
+{
+  justify-content: center;
+}
+.mat-column-Actions
+{
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 0% !important;
+  width:20% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+  justify-content: center;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}

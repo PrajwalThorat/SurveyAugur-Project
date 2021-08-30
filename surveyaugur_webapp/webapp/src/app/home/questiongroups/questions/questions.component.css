@@ -1,0 +1,28 @@
+form{
+    margin:50px;
+
+}
+.example-full-width {
+    width: 80%;
+  }
+
+  .example-chip-list {
+    width: 80%;
+  }
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+  .option-chip-list {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  .option{
+      margin-top:50px;
+  }
+  .example-button-row {
+      width:80%;
+    display: flex;
+    margin-top:20px;
+
+    justify-content: space-between;
+  }

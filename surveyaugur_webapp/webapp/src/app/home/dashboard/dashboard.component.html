@@ -1,0 +1,131 @@
+<body>
+  <div class="create-survey" [routerLink]="['/home/createsurvey']">CREATE SURVEY</div>
+
+  <div class="flex">
+
+
+    <div>
+      <mat-card class="example-card">
+        <mat-card-header>
+
+          <mat-card-title>Types of surveys</mat-card-title>
+
+        </mat-card-header>
+        <img mat-card-image src="assets/images/types_of_survey.png" alt="Types of Survey"
+          style="width:270px;height:200px">
+        <mat-card-content>
+          <p>
+            the types of surveys according to the span of time used to conduct the survey are comprised of
+            cross-sectional
+            surveys and longitudinal surveys.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Click Here</button>
+
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div>
+      <mat-card class="example-card2">
+        <mat-card-header>
+
+          <mat-card-title>Market Research</mat-card-title>
+
+        </mat-card-header>
+        <img mat-card-image src="assets/images/market_research.jpeg" alt="Market Research"
+          style="width:260px;height:200px">
+        <mat-card-content>
+          <p>
+            it Analyses help you to determine how suitable a particular market is?.also determine the relationship
+            between
+            supply and demand for a specific product or service
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Click Here</button>
+
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div>
+      <mat-card class="example-card">
+        <mat-card-header>
+
+          <mat-card-title>Help</mat-card-title>
+
+        </mat-card-header>
+        <img mat-card-image src="assets/images/help.jpeg" alt="Questions" style="width:250px;height:200px">
+        <mat-card-content>
+          <p>
+            it helps you to find what you require for getting into this field and provides benefitial links and
+            materials
+            to create surveys for your Excellence Understanding
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Click Here</button>
+
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div>
+      <mat-card class="example-card1">
+        <mat-card-header>
+
+          <mat-card-title>Upgrade</mat-card-title>
+
+        </mat-card-header>
+        <img mat-card-image src="assets/images/upgrade.jpeg" alt="Upgrade" style="width:250px;height:200px">
+        <mat-card-content>
+          <p>
+            Upgrade is to raise or improve the grade to Higher or Standard and it Will give or add you More benefitial
+            Features When you Upgrade your plan to latest.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Click Here</button>
+
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+
+
+  <div class="flex">
+    <div class="box">
+      <div>
+        <circle-progress [percent]="70" [space]="-6" [radius]="100" [outerStrokeWidth]="10" [animation]="true"
+          [animationDuration]="1000"></circle-progress>
+        <pre style="color:blue">         QUESTIONS</pre>
+      </div>
+
+      <div>
+        <circle-progress [percent]="90" [space]="-6" [radius]="100" [outerStrokeWidth]="10" [animation]="true"
+          [animation]="true" [animationDuration]="1000"></circle-progress>
+        <pre style="color:blue">         SURVEYS</pre>
+      </div>
+      <div>
+        <circle-progress [percent]="80" [space]="-6" [radius]="100" [outerStrokeWidth]="10" [animation]="true"
+          [animationDuration]="1000"></circle-progress>
+        <pre style="color:blue">      QUESTION GROUPS</pre>
+      </div>
+    </div>
+
+
+
+
+    <div class="container">
+      <div class="chart-container">
+        <div><span class="cls">Survey Status</span>
+          <div class="siz">
+            <canvas class="canvas" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+              [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

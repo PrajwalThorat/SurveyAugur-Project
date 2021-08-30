@@ -1,0 +1,71 @@
+<mat-dialog-content class="mat-typography" >
+<form #qinfo="ngForm">
+    <h1>Create Questions</h1>
+    <div>
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Question</mat-label>
+            <input matInput type="text" placeholder="Type your Question" name="questionBdy" ngModel maxlength="100" required name="q">
+            <mat-hint>Upto 100 Characers allowed</mat-hint>
+        </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field class="example-chip-list" appearance="outline">
+        <mat-label>Enter tags to search</mat-label>
+        <mat-chip-list #chipLis aria-label="tag selection">
+          <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
+                   [removable]="removable" (removed)="remove(tag)">
+            {{tag}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="New tag..."
+                 [matChipInputFor]="chipLis"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="add($event)" name="tagList">
+        </mat-chip-list>
+      </mat-form-field>
+    </div>
+
+    <div>
+       <div  class="buttons" style="padding-bottom: 10px;">
+        <mat-label>Question Type</mat-label>
+       </div>
+        <mat-radio-group aria-label="Select an option" [(ngModel)]="choice" name="questiontype">
+            <mat-radio-button value="Multiple_SELECT">Multiple Choice Questions</mat-radio-button>
+            <mat-radio-button value="SINGLE_SELECT">Single Select</mat-radio-button>
+            <mat-radio-button value="SUBJECTIVE">Subjectives</mat-radio-button>
+          </mat-radio-group>
+    </div>
+
+    <div class="option" *ngIf="choice=='Multiple_SELECT'||choice=='SINGLE_SELECT'">
+        <mat-form-field class="option-chip-list" appearance="outline">
+            <mat-label>Options</mat-label>
+            <mat-chip-list #chipList aria-label="option selection">
+              <mat-chip *ngFor="let option of options" [selectable]="selectable"
+                       [removable]="removable" (removed)="removeOption(option)">
+                {{option}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input placeholder="New Option..."
+                     [matChipInputFor]="chipList"
+                     [matChipInputSeparatorKeyCodes]="keyCode"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="addOption($event)" name="otionList" >
+            </mat-chip-list>
+          </mat-form-field>
+        </div>
+
+        <div class="example-button-row">
+            <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+            <button mat-raised-button color="primary" (click)="save(qinfo)" [disabled]="!qinfo.valid">Save</button>
+        </div>
+        <!-- <h1>
+          {{title}}
+          </h1>
+          <popup>
+            are you sure to save
+          </popup>
+          <button (click)="ClickButton()">save</button> -->
+</form>
+</mat-dialog-content>
+

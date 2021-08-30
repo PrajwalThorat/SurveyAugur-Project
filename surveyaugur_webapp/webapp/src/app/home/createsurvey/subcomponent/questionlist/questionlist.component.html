@@ -1,0 +1,21 @@
+<table *ngIf="questionList.length > 0; else elseBlock">
+  <tr>
+    <th >SNo</th>
+    <th>Question</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let q of questionList; index as i">
+    <td *ngIf="i!=0">{{i}}</td>
+    <td *ngIf="i!=0">{{q.questionBody}}</td>
+    <td *ngIf="i!=0"><button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+      <mat-icon (click)="deleteQ(i)">delete</mat-icon>
+    </button></td>
+
+  </tr>
+</table>
+<ng-template #elseBlock>
+  <h4> No Question Selected !!!! </h4>
+  </ng-template>
+  <div  class="example-button-row" >
+    <button mat-raised-button color="primary" matStepperNext (click)="save()" [disabled]="!enable">Save and Next</button>
+  </div>

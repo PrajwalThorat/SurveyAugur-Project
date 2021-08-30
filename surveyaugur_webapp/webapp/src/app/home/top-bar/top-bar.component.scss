@@ -1,0 +1,43 @@
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(247, 112, 63);
+}
+
+.mat-icon {
+  cursor: pointer;
+}
+
+#title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: -17px;
+}
+
+#profile{
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+}
+
+#avatar-container{
+  position: relative;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px
+}
+
+#logo-container{
+  display: block;
+  position: relative;
+  background-color: rgb(78, 78, 78);
+  border-radius: 50%;
+  height: 58px;
+  width: 60px;
+  margin-left: 14px;
+}

@@ -1,0 +1,19 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:rootsurvey123@localhost:27017/?authSource=admin&authMechanism=SCRAM-SHA-1
+      database: surveyauthorDB
+  banner:
+    location: classpath:banner.txt
+  application:
+    name: survey_authoring
+
+
+server:
+  port: 8086
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true

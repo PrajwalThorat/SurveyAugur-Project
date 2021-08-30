@@ -1,0 +1,102 @@
+version: "3.9"
+services:
+  discoveryservice:
+    build: ./discoveryservice
+    image: discoveryservice
+    network_mode: host
+    container_name: discoveryservice_container
+    restart: always
+
+  apigateway:
+    build: ./apigateway
+    image: apigateway
+    network_mode: host
+    container_name: apigateway_container
+    depends_on:
+      - discoveryservice
+    command: ["sleep 10"]
+    restart: always
+
+  survey_authoring:
+    build: ./survey_authoring
+    image: survey_authoring
+    network_mode: host
+    container_name: survey_authoring_container
+    depends_on:
+      - mongo
+      - discoveryservice
+    command: ["sleep 10"]
+    restart: always
+
+  survey_engine:
+    build: ./survey_engine
+    image: survey_engine
+    network_mode: host
+    container_name: survey_engine_container
+    depends_on:
+      - mongo
+      - discoveryservice
+    command: ["sleep 10"]
+    restart: always
+
+  surveyaugur_webapp:
+    build: ./surveyaugur_webapp
+    image: surveyaugur_webapp
+    network_mode: host
+    container_name: surveyaugur_webapp_container
+    depends_on:
+      - discoveryservice
+    command: ["sleep 10"]
+    restart: always
+
+  user_microservice:
+    build: ./user_microservice
+    image: user_microservice
+    network_mode: host
+    container_name: user_microservice_container
+    depends_on:
+      - mongo
+      - discoveryservice
+    command: ["sleep 10"]
+    env_file:
+      - ./docker_env/local/user_microservice.env
+    restart: always
+
+  surveyaugur_userapp:
+    build: ./surveyaugur_userapp
+    image: surveyaugur_userapp
+    network_mode: host
+    container_name: surveyaugur_userapp_container
+    depends_on:
+      - discoveryservice
+    command: ["sleep 10"]
+    restart: always
+
+  alerting_service:
+    build: ./alerting_service
+    image: alerting_service
+    network_mode: host
+    container_name: alerting_service_container
+    depends_on:
+      - discoveryservice
+    command: ["sleep 10"]
+    restart: always  
+  
+  mongo:
+    image: mongo:latest
+    container_name: mymongodb
+    volumes:
+      - mongodata:/data/db
+    network_mode: host
+    restart: on-failure
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootsurvey123
+
+  rabbitmq:
+    image: rabbitmq:management
+    restart: always
+    network_mode: host
+
+volumes:
+  mongodata:

@@ -1,0 +1,29 @@
+spring:
+  banner:
+    location: classpath:banner.txt
+  application:
+    name: survey_engine
+  data:
+    mongodb:
+      uri: mongodb://root:rootsurvey123@localhost:27017/?authSource=admin&authMechanism=SCRAM-SHA-1
+      database: surveyengineDB
+
+  rabbitmq:
+    host: localhost
+    password: guest
+    port: 15672
+    username: guest
+    exchange: notification_alert_exchange
+    queue: topic_alert_mail
+    routingKey: mailroutingkey
+
+
+
+server:
+  port: 8087
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
